@@ -6,7 +6,6 @@ import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.usermodel.DateUtil;
 
-import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.text.DecimalFormat;
 import java.util.LinkedList;
@@ -279,29 +278,6 @@ public class ExcelUtil {
 		FileOutputStream fileOutputStream = new FileOutputStream(new File(path));
 		workbook.write(fileOutputStream);
 		fileOutputStream.close();
-	}
-	
-	/**
-	 * 在输出流中导出excel。
-	 * @param excelName 导出的excel名称 包括扩展名
-	 * @param sheetName 导出的sheet名称
-	 * @param fieldName 列名数组
-	 * @param data 数据组
-	 * @param response response
-	 * @throws IOException  转换流时IO错误
-	 */
-	public void makeStreamExcel(String excelName, String sheetName,String[] fieldName
-			, List<Object[]> data,HttpServletResponse response) throws IOException {
-		 OutputStream os = null;
-		response.reset(); // 清空输出流
-		os = response.getOutputStream(); // 取得输出流
-		response.setHeader("Content-disposition", "attachment; filename="
-				+ new String(excelName.getBytes(), "ISO-8859-1")); // 设定输出文件头
-		response.setContentType("application/msexcel"); // 定义输出类型
-		//在内存中生成工作薄
-		HSSFWorkbook workbook = makeWorkBook(sheetName,fieldName,data);
-		os.flush();
-		workbook.write(os);
 	}
 	
 	/**
