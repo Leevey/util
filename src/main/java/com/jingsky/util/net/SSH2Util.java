@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.Vector;
 
 /**
- * 使用SSH2 远程连接Linux。<br/>
- * 连接SSH2完毕后进行连接关闭(调用close())，从来释放连接。<br/>
+ * 使用SSH2 远程连接Linux。
+ * 连接SSH2完毕后进行连接关闭(调用close())，从来释放连接。
  * 依赖于 ganymed-ssh2-build210.jar
  * @author 朱志杰 QQ：862990787
  * Sep 2, 2013 9:36:04 AM

@@ -11,7 +11,7 @@ import org.apache.mina.transport.socket.nio.NioSocketConnector;
 import java.net.InetSocketAddress;
 
 /**
- * tcp客户端。依赖于mina-core-2.0.7.jar,slf4j-api-1.6.6.jar.<br/>
+ * tcp客户端。依赖于mina-core-2.0.7.jar,slf4j-api-1.6.6.jar.
  * 生成客户端时，实现这个抽象类即可。
  * @author 朱志杰 QQ：862990787
  * Sep 5, 2013 9:36:31 AM

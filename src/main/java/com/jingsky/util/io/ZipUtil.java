@@ -85,7 +85,6 @@ public class ZipUtil {
 	 * Aug 20, 2013 4:52:03 PM
 	 * @param srcFile 源文件，不能是文件夹。
 	 * @param out 压缩文件的输出流。
-	 * @param destFile 压缩后的文件
 	 * @param dir 在压缩包中的位置,根目录传入/。
 	 * @throws IOException 压缩时出现了异常。
 	 */

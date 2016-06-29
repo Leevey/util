@@ -86,9 +86,9 @@ public class VerifyUtil {
 	public static final String letter_number_underline_regexp = "^[a-zA-Z0-9_]+$";
 	
 	/**
-	 * 根据传入的正则表达式和字符串进行校验。<br/>
-	 * @param String text 内容
-	 * @param String patternStr 正则表达式
+	 * 根据传入的正则表达式和字符串进行校验。
+	 * @param  text 内容
+	 * @param  patternStr 正则表达式
 	 * @return 如果是返回true，不是返回false
 	 */
 	public static boolean chkTextBypattern(String text,String patternStr) {
@@ -98,7 +98,7 @@ public class VerifyUtil {
 	
 
 	/**
-	 * 功能：检查是否为URL。<br/>
+	 * 功能：检查是否为URL。
 	 * 包括Http，Ftp,News,Nntpurl,Telnet,Gopher,Wais,Mailto,File,
 	 * Prosperurl和Otherurl。
 	 * 
@@ -123,9 +123,9 @@ public class VerifyUtil {
 	}
 
 	/**
-	 * 判断是否为IP V4地址。<br/>
+	 * 判断是否为IP V4地址。
 	 * 
-	 * @param String
+	 * @param text
 	 *            text 内容
 	 * @return 如果是返回true，不是返回false
 	 */

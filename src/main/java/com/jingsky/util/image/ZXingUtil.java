@@ -20,7 +20,7 @@ import java.util.Map;
 /**
  * ZXing工具类,依赖zxing
  * @see -----------------------------------------------------------------------------------------------------------------------
- * @see 首页--https://code.google.com/p/zxing
+ * @see --https://code.google.com/p/zxing
  */ 
 public class ZXingUtil { 
     private ZXingUtil(){} 
@@ -92,7 +92,6 @@ public class ZXingUtil {
      * @param content   二维码内容
      * @param charset   编码二维码内容时采用的字符集(传null时默认采用UTF-8编码)
      * @param formatName 文件格式,jpg png等
-     * @param imagePath 二维码图片存放路径(含文件名)
      * @param width     生成的二维码图片宽度
      * @param height    生成的二维码图片高度
      * @param logoPath  logo头像存放路径(含文件名,若不加logs则传null即可)
@@ -107,7 +106,6 @@ public class ZXingUtil {
      * @param content   二维码内容
      * @param charset   编码二维码内容时采用的字符集(传null时默认采用UTF-8编码)
      * @param formatName 文件格式,jpg png等
-     * @param imagePath 二维码图片存放路径(含文件名)
      * @param width     生成的二维码图片宽度
      * @param height    生成的二维码图片高度
      * @param logoPath  logo头像存放路径(含文件名,若不加logs则传null即可)
@@ -132,11 +130,10 @@ public class ZXingUtil {
      * 生成二维码流
      * @param content   二维码内容
      * @param charset   编码二维码内容时采用的字符集(传null时默认采用UTF-8编码)
-     * @param imagePath 二维码图片存放路径(含文件名)
      * @param width     生成的二维码图片宽度
      * @param height    生成的二维码图片高度
      * @param logoPath  logo头像存放路径(含文件名,若不加logo则传null即可)
-     * @param 是否显示二维码内容
+     * @param isShowContent 是否显示二维码内容
      * @return BufferedImage null时为生成失败
      */ 
     public static BufferedImage encodeQRCodeImage(String content, String charset, int width, int height, String logoPath,boolean isShowContent) { 
@@ -153,7 +150,7 @@ public class ZXingUtil {
      * @param width     生成的二维码图片宽度
      * @param height    生成的二维码图片高度
      * @param logoPath  logo头像存放路径(含文件名,若不加logo则传null即可)
-     * @param 是否显示二维码内容
+     * @param isShowContent 是否显示二维码内容
      * @return 生成二维码结果(true or false)
      */ 
     public static boolean encodeQRCodeImage(String content, String charset, String imagePath, int width, int height, String logoPath,boolean isShowContent) { 
@@ -177,7 +174,6 @@ public class ZXingUtil {
      * 解析二维码
      * @param imagePath 二维码图片存放路径(含文件名)
      * @param charset   解码二维码内容时采用的字符集(传null时默认采用UTF-8编码)
-     * @param 是否显示二维码内容
      * @return 解析成功后返回二维码文本,否则返回空字符串
      */ 
     public static String decodeQRCodeImage(String imagePath, String charset) { 

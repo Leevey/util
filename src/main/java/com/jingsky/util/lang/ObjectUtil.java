@@ -124,7 +124,7 @@ public class ObjectUtil {
 	}
 
 	/**
-	 * 将map转换为Object，将map key对应的值赋值到Object的属性。<br/>
+	 * 将map转换为Object，将map key对应的值赋值到Object的属性。
 	 * 必须有set方法。
 	 * @param map Map
 	 * @param cls 类
@@ -184,7 +184,7 @@ public class ObjectUtil {
 	}
 
 	/**
-	 * 将Object对象转换为Map，key为属性名，value为属性值。<br/>
+	 * 将Object对象转换为Map，key为属性名，value为属性值。
 	 * 必须有get方法。 
 	 * @param obj
 	 * @return Map<String, Object>

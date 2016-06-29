@@ -436,10 +436,8 @@ public class CsvReaderUtil {
 
 	/**
 	 * Gets the count of headers read in by a previous call to
-	 * {@link com.CsvReaderUtil.CsvReader#readHeaders readHeaders()}.
 	 *
 	 * @return The count of headers read in by a previous call to
-	 *         {@link com.CsvReaderUtil.CsvReader#readHeaders readHeaders()}.
 	 */
 	public int getHeaderCount() {
 		return headersHolder.Length;
@@ -530,13 +528,13 @@ public class CsvReaderUtil {
 	}
 
 	/**
-	 * Creates a {@link com.CsvReaderUtil.CsvReader CsvReader} object using a string
+	 * Creates a CsvReader object using a string
 	 * of data as the source.&nbsp;Uses ISO-8859-1 as the
 	 * {@link java.nio.charset.Charset Charset}.
 	 * 
 	 * @param data
 	 *            The String of data to use as the source.
-	 * @return A {@link com.CsvReaderUtil.CsvReader CsvReader} object using the
+	 * @return A  CsvReader object using the
 	 *         String of data as the source.
 	 */
 	public static CsvReaderUtil parse(String data) {
@@ -1431,7 +1429,7 @@ public class CsvReaderUtil {
 	/**
 	 * Skips the next record of data by parsing each column.&nbsp;Does not
 	 * increment
-	 * {@link com.CsvReaderUtil.CsvReader#getCurrentRecord getCurrentRecord()}.
+	 * CsvReaderUtil.CsvReader#getCurrentRecord getCurrentRecord().
 	 * 
 	 * @return Whether another record was successfully skipped or not.
 	 * @exception IOException

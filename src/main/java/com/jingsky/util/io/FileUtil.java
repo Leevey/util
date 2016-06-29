@@ -138,7 +138,7 @@ public class FileUtil {
 	/**
 	 * 从文件路径中抽取文件的扩展名,
 	 * 例如. "mypath/myfile.txt" -> "txt".
-	 * @param 文件路径
+	 * @param path
 	 * @return 如果path为null，直接返回null。
 	 */
 	public static String getFilenameExtension(String path) {

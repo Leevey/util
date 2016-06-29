@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.io.StringReader;
 
 /**
- * DOM解析XML<br/>
+ * DOM解析XML
  * 可调用setCharEncode设置读写文件编码，若不设置则采用utf-8.
  * 通过获取子节点方法
  * @author 朱志杰

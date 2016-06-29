@@ -41,7 +41,7 @@ public class CsvWriterUtil {
 	public static final int ESCAPE_MODE_BACKSLASH = 2;
 
 	/**
-	 * Creates a {@link com.CsvWriterUtil.CsvWriter CsvWriter} object using a file
+	 * Creates a { com.CsvWriterUtil.CsvWriter CsvWriter} object using a file
 	 * as the data destination.
 	 * 
 	 * @param fileName
@@ -67,7 +67,7 @@ public class CsvWriterUtil {
 	}
 
 	/**
-	 * Creates a {@link com.CsvWriterUtil.CsvWriter CsvWriter} object using a file
+	 * Creates a {com.CsvWriterUtil.CsvWriter CsvWriter} object using a file
 	 * as the data destination.&nbsp;Uses a comma as the column delimiter and
 	 * ISO-8859-1 as the {@link java.nio.charset.Charset Charset}.
 	 *
@@ -79,7 +79,7 @@ public class CsvWriterUtil {
 	}
 
 	/**
-	 * Creates a {@link com.CsvWriterUtil.CsvWriter CsvWriter} object using a Writer
+	 * Creates a {com.CsvWriterUtil.CsvWriter CsvWriter} object using a Writer
 	 * to write data to.
 	 *
 	 * @param outputStream
@@ -98,7 +98,7 @@ public class CsvWriterUtil {
 	}
 
 	/**
-	 * Creates a {@link com.CsvWriterUtil.CsvWriter CsvWriter} object using an
+	 * Creates a {com.CsvWriterUtil.CsvWriter CsvWriter} object using an
 	 * OutputStream to write data to.
 	 *
 	 * @param outputStream

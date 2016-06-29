@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Http工具类.<br/>
+ * Http工具类.
  * 编译时依赖于httpclient4.5.1.
  */
 public class HttpUtil {

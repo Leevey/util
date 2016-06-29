@@ -10,7 +10,7 @@ import java.util.*;
 
 
 /**
- * 用来发送邮件的辅助类。<br/>
+ * 用来发送邮件的辅助类。
  * 主要依赖jar包：activation.jar，mail.jar。
  * @version 1.1
  * @author 朱志杰 QQ:862990787

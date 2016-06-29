@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Properties;
 
 /**
- * 用于对文本的操作。<br/>
+ * 用于对文本的操作。
  * 可调用setCharEncode设置读写文件编码，若不设置则采用utf-8.
  * @author 朱志杰
  */
@@ -67,7 +67,7 @@ public class TextUtil {
 	
 	/**
 	 * 得到这个文本中，不包含任一个关键字的行。即只要一行中包含其中一个关键字则不符合要求。
-	 * <br/>将结果集保存到 newfilePath这个文本上，如果文本不存在创建文本，文本存在将追加在文本最后。
+	 * 将结果集保存到 newfilePath这个文本上，如果文本不存在创建文本，文本存在将追加在文本最后。
 	 * @param newFile 结果集保存的文本对象。
 	 * @param keys 需要查找的key。
 	 * @return List<String> 
@@ -127,7 +127,7 @@ public class TextUtil {
 	
 	/**
 	 * 得到这个文本中，不包含任一个关键字的行。即只要一行中包含其中一个关键字则不符合要求。
-	 * <br/>文件过大时不要使用！
+	 * 文件过大时不要使用！
 	 * @param keys 需要查找的key。
 	 * @return List<String> 
 	 * @throws IOException 读取文本时异常
@@ -159,7 +159,7 @@ public class TextUtil {
 	
 	/**
 	 * 得到这个文本中，包含任一个关键字的行。即只要一行中只包含其中一个关键字则符合要求。
-	 * <br/>将结果集保存到 newfilePath这个文本上，如果文本不存在创建文本，文本存在将追加在文本最后。
+	 * 将结果集保存到 newfilePath这个文本上，如果文本不存在创建文本，文本存在将追加在文本最后。
 	 * @param newFile 结果集保存的文本对象。
 	 * @param keys 需要查找的key。
 	 * @return List<String> 
@@ -202,7 +202,7 @@ public class TextUtil {
 	
 	/**
 	 * 得到这个文本中，包含任一个关键字的行。即只要一行中只包含其中一个关键字则符合要求。
-	 * <br/>文件过大时不要使用！
+	 * 文件过大时不要使用！
 	 * @param keys 需要查找的key。
 	 * @return List<String> 
 	 * @throws IOException 读取文本时异常
@@ -235,10 +235,9 @@ public class TextUtil {
 	
 	/**
 	 * 得到这个文本中，包含全部关键字的行。如果一行中只包含部分关键字则此行不符合要求。
-	 * <br/>将结果集保存到 newfilePath这个文本上，如果文本不存在创建文本，文本存在将追加在文本最后。
+	 * 将结果集保存到 newfilePath这个文本上，如果文本不存在创建文本，文本存在将追加在文本最后。
 	 * @param newFile 结果集保存的文本对象。
 	 * @param keys 需要查找的key。
-	 * @return List<String> 
 	 * @throws IOException 读取文本或写入时异常
 	 */
 	public void findLineByKeyAnd(String [] keys,File newFile) throws IOException {
@@ -278,8 +277,7 @@ public class TextUtil {
 	}
 	
 	/**
-	 * 得到这个文本中，包含全部关键字的行。如果一行中只包含部分关键字则此行不符合要求。
-	 * <br/>文件过大时不要使用！
+	 * 得到这个文本中，包含全部关键字的行。如果一行中只包含部分关键字则此行不符合要求。文件过大时不要使用！
 	 * @param keys 需要查找的key。
 	 * @return List<String> 
 	 * @throws IOException 读取文本时异常
@@ -354,7 +352,7 @@ public class TextUtil {
 
 	/**
 	 * 得到这个txt所有的行的数据。
-	 * <br/>文件过大时不要使用！
+	 * 文件过大时不要使用！
 	 * @return List<String> 
 	 * @throws IOException 读取文本时异常
 	 */

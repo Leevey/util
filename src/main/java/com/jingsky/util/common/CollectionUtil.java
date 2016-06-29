@@ -215,7 +215,7 @@ public class CollectionUtil {
 	 * 功能：转为数组。
 	 * @author 朱志杰 QQ：695520848
 	 * Aug 20, 2013 10:46:00 PM
-	 * @param list 源list
+	 * @param iterator
 	 * @return T[]
 	 */
 	public static <T> T[] toArray(Iterator<T> iterator){
@@ -264,8 +264,8 @@ public class CollectionUtil {
 	
 	/**
 	 * 将一个数组添加到另一个数组中，并返回一个新数组。
-	 * @param array 被添加到的数组
-	 * @param otherArray 需要添加的数组
+	 * @param array1 被添加到的数组
+	 * @param array2 需要添加的数组
 	 * @return T[] 返回的新数组
 	 */
 	public static byte[] addToArray(byte[] array1, byte[] array2) {
@@ -283,8 +283,8 @@ public class CollectionUtil {
 	
 	/**
 	 * 将一个数组添加到另一个数组中，并返回一个新数组。
-	 * @param array 被添加到的数组
-	 * @param otherArray 需要添加的数组
+	 * @param array1 被添加到的数组
+	 * @param array2 需要添加的数组
 	 * @return T[] 返回的新数组
 	 */
 	public static <T> T[] addToArray(T[] array1, T[] array2) {

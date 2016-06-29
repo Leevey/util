@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 用来操作ftp的综合类。<br/>
+ * 用来操作ftp的综合类。
  * 主要依赖jar包commons-net-3.1.jar。
  * @version 1.0
  * @author 朱志杰

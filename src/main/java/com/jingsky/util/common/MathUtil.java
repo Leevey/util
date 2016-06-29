@@ -268,15 +268,15 @@ public class MathUtil {
 	 * @param first 第一个double
 	 * @param second 第二个double
 	 * @param scale 保留小数点的位数
-	 * @param roundingMode 小数模式。若不想选择可填写-1，会默认使用BigDecimal.ROUND_HALF_UP，即5舍6入。<br/>
-	 * BigDecimal.ROUND_CEILING 如果 BigDecimal 是正的，则做 ROUND_UP 操作；如果为负，则做 ROUND_DOWN 操作。<br/>
-	 * BigDecimal.ROUND_DOWN 从不在舍弃(即截断)的小数之前增加数字。<br/>
-	 * BigDecimal.ROUND_FLOOR 如果 BigDecimal 为正，则作 ROUND_UP ；如果为负，则作 ROUND_DOWN 。<br/>
-	 * BigDecimal.ROUND_HALF_DOWN 若舍弃部分> .5，则作 ROUND_UP；否则，作 ROUND_DOWN 。<br/>
-	 * BigDecimal.ROUND_HALF_EVEN 如果舍弃部分左边的数字为奇数，则作 ROUND_HALF_UP ；如果它为偶数，则作 ROUND_HALF_DOWN 。<br/>
-	 * BigDecimal.ROUND_HALF_UP 若舍弃部分>=.5，则作 ROUND_UP ；否则，作 ROUND_DOWN 。<br/>
-	 * BigDecimal.ROUND_UNNECESSARY 该“伪舍入模式”实际是指明所要求的操作必须是精确的，，因此不需要舍入操作。<br/>
-	 * BigDecimal.ROUND_UP 总是在非 0 舍弃小数(即截断)之前增加数字。<br/>
+	 * @param roundingMode 小数模式。若不想选择可填写-1，会默认使用BigDecimal.ROUND_HALF_UP，即5舍6入。
+	 * BigDecimal.ROUND_CEILING 如果 BigDecimal 是正的，则做 ROUND_UP 操作；如果为负，则做 ROUND_DOWN 操作。
+	 * BigDecimal.ROUND_DOWN 从不在舍弃(即截断)的小数之前增加数字。
+	 * BigDecimal.ROUND_FLOOR 如果 BigDecimal 为正，则作 ROUND_UP ；如果为负，则作 ROUND_DOWN 。
+	 * BigDecimal.ROUND_HALF_DOWN 若舍弃部分> .5，则作 ROUND_UP；否则，作 ROUND_DOWN 。
+	 * BigDecimal.ROUND_HALF_EVEN 如果舍弃部分左边的数字为奇数，则作 ROUND_HALF_UP ；如果它为偶数，则作 ROUND_HALF_DOWN 。
+	 * BigDecimal.ROUND_HALF_UP 若舍弃部分>=.5，则作 ROUND_UP ；否则，作 ROUND_DOWN 。
+	 * BigDecimal.ROUND_UNNECESSARY 该“伪舍入模式”实际是指明所要求的操作必须是精确的，，因此不需要舍入操作。
+	 * BigDecimal.ROUND_UP 总是在非 0 舍弃小数(即截断)之前增加数字。
 	 * @return double
 	 */
 	public static double divideDouble(double first, double second,int scale, int roundingMode) {

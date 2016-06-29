@@ -19,7 +19,7 @@ public class StringUtil {
     private static final int PAD_LIMIT = 8192;
     
     /**
-     * 将中间带下划线的字符串转换为像java驼峰式字符串。<br/>
+     * 将中间带下划线的字符串转换为像java驼峰式字符串。
      * 如：good_boy->goodBoy
      * @param sourceStr 源字符串
      * @return String
@@ -40,7 +40,7 @@ public class StringUtil {
     }
     
     /**
-     * 将像java驼峰式字符串转换为中间带下划线的字符串。<br/>
+     * 将像java驼峰式字符串转换为中间带下划线的字符串。
      * 如：goodBoy->good_boy
      * @param sourceStr 源字符串
      * @return String
@@ -1110,7 +1110,7 @@ public class StringUtil {
     }
 	
 	/**
-	 * 功能：切换字符串中的所有字母大小写。<br/>
+	 * 功能：切换字符串中的所有字母大小写。
 	 * <pre>
      * StringUtil.swapCase(null)                 = null
      * StringUtil.swapCase("")                   = ""
@@ -1152,10 +1152,10 @@ public class StringUtil {
     }
 
 	/**
-	 * 功能：截取出最后一个标志位之后的字符串.<br/>
-	 * 如果sourceStr为empty或者expr为null，直接返回源字符串。<br/>
-	 * 如果expr长度为0，直接返回sourceStr。<br/>
-	 * 如果expr在sourceStr中不存在，直接返回sourceStr。<br/>
+	 * 功能：截取出最后一个标志位之后的字符串.
+	 * 如果sourceStr为empty或者expr为null，直接返回源字符串。
+	 * 如果expr长度为0，直接返回sourceStr。
+	 * 如果expr在sourceStr中不存在，直接返回sourceStr。
 	 * @author 朱志杰 QQ：695520848
 	 * Jun 9, 2013 11:41:00 AM
 	 * @param sourceStr 被截取的字符串
@@ -1178,10 +1178,10 @@ public class StringUtil {
 	}
 	
 	/**
-	 * 功能：截取出最后一个标志位之前的字符串.<br/>
-	 * 如果sourceStr为empty或者expr为null，直接返回源字符串。<br/>
-	 * 如果expr长度为0，直接返回sourceStr。<br/>
-	 * 如果expr在sourceStr中不存在，直接返回sourceStr。<br/>
+	 * 功能：截取出最后一个标志位之前的字符串.
+	 * 如果sourceStr为empty或者expr为null，直接返回源字符串。
+	 * 如果expr长度为0，直接返回sourceStr。
+	 * 如果expr在sourceStr中不存在，直接返回sourceStr。
 	 * @author 朱志杰 QQ：695520848
 	 * Jun 9, 2013 11:41:00 AM
 	 * @param sourceStr 被截取的字符串
@@ -1203,10 +1203,10 @@ public class StringUtil {
 	}
 	
 	/**
-	 * 功能：截取出第一个标志位之后的字符串.<br/>
-	 * 如果sourceStr为empty或者expr为null，直接返回源字符串。<br/>
-	 * 如果expr长度为0，直接返回sourceStr。<br/>
-	 * 如果expr在sourceStr中不存在，直接返回sourceStr。<br/>
+	 * 功能：截取出第一个标志位之后的字符串.
+	 * 如果sourceStr为empty或者expr为null，直接返回源字符串。
+	 * 如果expr长度为0，直接返回sourceStr。
+	 * 如果expr在sourceStr中不存在，直接返回sourceStr。
 	 * @author 朱志杰 QQ：695520848
 	 * Jun 9, 2013 11:41:00 AM
 	 * @param sourceStr 被截取的字符串
@@ -1229,10 +1229,10 @@ public class StringUtil {
 	}
 	
 	/**
-	 * 功能：截取出第一个标志位之前的字符串.<br/>
-	 * 如果sourceStr为empty或者expr为null，直接返回源字符串。<br/>
-	 * 如果expr长度为0，直接返回sourceStr。<br/>
-	 * 如果expr在sourceStr中不存在，直接返回sourceStr。<br/>
+	 * 功能：截取出第一个标志位之前的字符串.
+	 * 如果sourceStr为empty或者expr为null，直接返回源字符串。
+	 * 如果expr长度为0，直接返回sourceStr。
+	 * 如果expr在sourceStr中不存在，直接返回sourceStr。
 	 * 如果expr在sourceStr中存在不止一个，以第一个位置为准。
 	 * @author 朱志杰 QQ：695520848
 	 * Jun 9, 2013 11:41:00 AM
@@ -1255,7 +1255,7 @@ public class StringUtil {
 	}
 	
 	/**
-	 * 功能：检查这个字符串是不是空字符串。<br/>
+	 * 功能：检查这个字符串是不是空字符串。
 	 * 如果这个字符串为null或者trim后为空字符串则返回true，否则返回false。
 	 * @author 朱志杰 QQ：695520848
 	 * Jun 9, 2013 11:33:28 AM
@@ -1271,7 +1271,7 @@ public class StringUtil {
 	}
 	
 	/**
-	 * 功能：检查这个字符序列(CharSequence)是不是空。<br/>
+	 * 功能：检查这个字符序列(CharSequence)是不是空。
 	 * 如果这个字符序列为null或者trim后为空序列则返回true，否则返回false。
 	 * @author 朱志杰 QQ：695520848
 	 * Jun 9, 2013 11:33:28 AM

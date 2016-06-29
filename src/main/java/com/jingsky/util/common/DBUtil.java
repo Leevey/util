@@ -41,7 +41,7 @@ public class DBUtil {
     private static Map<String,String> dbInfoMap=new HashMap<String,String>();
 	
 	/**
-	 * 功能：获取一个DBUtil对象。若连接池名称相同，且url、用户名相同，直接返回直接创建的对应DBUtil。<br/>
+	 * 功能：获取一个DBUtil对象。若连接池名称相同，且url、用户名相同，直接返回直接创建的对应DBUtil。
      * 若连接池名称相同，但url、用户名任一个不同，则抛出RuntimeException异常。
 	 * @author 朱志杰 QQ：695520848
 	 * Jul 16, 2013 10:24:00 AM

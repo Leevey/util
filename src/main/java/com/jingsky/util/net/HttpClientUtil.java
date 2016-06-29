@@ -38,7 +38,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * HttpCilent 工具类。<br/>
+ * HttpCilent 工具类。
  * 依赖于httpclient-4.2.1.jar,httpclient-cache-4.2.1.jar,httpcore-4.2.1.jar,httpmime-4.2.1.jar.
  * @author 朱志杰 QQ：695520848
  * Jul 2, 2013 5:52:25 PM

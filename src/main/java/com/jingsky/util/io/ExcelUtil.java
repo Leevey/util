@@ -12,9 +12,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 封装对excel的操作，包括本地读写excel和流中输出excel,支持office 2007。<br/>
- * 依赖于poi-3.9-20121203.jar,poi-ooxml-3.9-20121203.jar,poi-ooxml-schemas-3.9-20121203.jar,dom4j-1.6.1.jar<br/>
- * 有参构造函数参数为excel的全路径<br/>
+ * 封装对excel的操作，包括本地读写excel和流中输出excel,支持office 2007。
+ * 依赖于poi-3.9-20121203.jar,poi-ooxml-3.9-20121203.jar,poi-ooxml-schemas-3.9-20121203.jar,dom4j-1.6.1.jar
+ * 有参构造函数参数为excel的全路径
  * @author 朱志杰
  */
 public class ExcelUtil {

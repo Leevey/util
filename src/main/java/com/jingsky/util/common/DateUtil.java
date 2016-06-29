@@ -168,7 +168,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 将yyyy-MM-dd HH:mm:ss字符串转换成日期(Date)<br/>
+	 * 将yyyy-MM-dd HH:mm:ss字符串转换成日期(Date)
 	 * @param dateStr 时间字符串
 	 * @param dataFormat 当前时间字符串的格式。
 	 * @return Date 日期 ,转换异常时返回null。
@@ -184,7 +184,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 将yyyy-MM-dd HH:mm:ss字符串转换成日期(com.jingsky.common.Date)<br/>
+	 * 将yyyy-MM-dd HH:mm:ss字符串转换成日期(com.jingsky.common.Date)
 	 * @param dateStr 时间字符串
 	 * @param dataFormatStr 当前时间字符串的格式。
 	 * @return Date 日期 ,转换异常时返回null。
@@ -201,7 +201,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 将yyyy-MM-dd HH:mm:ss字符串转换成日期(com.jingsky.common.Date)<br/>
+	 * 将yyyy-MM-dd HH:mm:ss字符串转换成日期(com.jingsky.common.Date)
 	 * @param dateStr yyyy-MM-dd HH:mm:ss字符串
 	 * @return Date 日期 ,转换异常时返回null。
 	 */
@@ -370,7 +370,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 得到秒。格式：56<br/>
+	 * 得到秒。格式：56
 	 * @return int
 	 */
 	public int secondInt() {
@@ -378,7 +378,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 得到分钟。格式：56<br/>
+	 * 得到分钟。格式：56
 	 * @return int
 	 */
 	public int minuteInt() {
@@ -386,7 +386,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 得到小时。格式：23<br/>
+	 * 得到小时。格式：23
 	 * @return int
 	 */
 	public int hourInt() {
@@ -394,7 +394,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 得到日。格式：26<br/>
+	 * 得到日。格式：26
 	 * 注意：这里1日返回1,2日返回2。
 	 * @return int
 	 */
@@ -403,7 +403,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 得到月。格式：5<br/>
+	 * 得到月。格式：5
 	 * 注意：这里1月返回1,2月返回2。
 	 * @return int
 	 */
@@ -517,7 +517,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 根据日期得到星期几,得到数字。<br/>
+	 * 根据日期得到星期几,得到数字。
 	 * 7, 1, 2, 3, 4, 5, 6
 	 * @return Integer 如：6
 	 */
@@ -550,7 +550,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 将日期按照一定的格式进行格式化为字符串。<br/>
+	 * 将日期按照一定的格式进行格式化为字符串。
 	 * 例如想将时间格式化为2012-03-05 12:56 ,则只需要传入formate为yyyy-MM-dd HH:mm即可。
 	 * @param formate 格式化格式，如：yyyy-MM-dd HH:mm
 	 * @return String 格式后的日期字符串。如果当前对象为null，则直接返回null。
@@ -580,7 +580,7 @@ public class DateUtil {
 
 
 	/**
-	 * 功能：用java.common.Date进行构造。<br/>
+	 * 功能：用java.common.Date进行构造。
 	 * 注意：若date为null，则构造为当前时间。
 	 * @author 朱志杰 QQ：695520848
 	 * May 29, 2013 10:59:05 AM
@@ -591,7 +591,7 @@ public class DateUtil {
 	}
 
     /**
-     * 功能：用Timestamp进行构造。<br/>
+     * 功能：用Timestamp进行构造。
      * 注意：若timestamp为null，则构造为当前时间。
      * @author 朱志杰 QQ：695520848
      * May 29, 2013 10:59:05 AM
@@ -612,7 +612,7 @@ public class DateUtil {
 	}
 
     /**
-     * 功能：calendar进行构造。<br/>
+     * 功能：calendar进行构造。
      * * 注意：若timestamp为null，则构造为当前时间。
      * @author 朱志杰 QQ：695520848
      * May 29, 2013 10:59:05 AM

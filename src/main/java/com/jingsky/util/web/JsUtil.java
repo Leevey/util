@@ -8,7 +8,7 @@ import java.io.*;
 import java.net.URL;
 
 /**
- * 用java操作 javascript 工具类。<br/>
+ * 用java操作 javascript 工具类。
  * 可以加载网络上的js，或者文件路径下的js，可以调用js文件中的函数。
  * @author 朱志杰 QQ：695520848
  * May 31, 2013 9:03:17 AM
