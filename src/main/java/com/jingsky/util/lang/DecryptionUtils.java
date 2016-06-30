@@ -1,13 +1,20 @@
 package com.jingsky.util.lang;
 
+import java.security.Key;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/**
- * SHA加密
- */
-public class SHAUtil {
+import org.apache.shiro.codec.Base64;
+import org.apache.shiro.codec.H64;
+import org.apache.shiro.codec.Hex;
+import org.apache.shiro.crypto.AesCipherService;
+import org.apache.shiro.crypto.hash.Md5Hash;
 
+/**
+ * 加密解密工具类,依赖shiro-core-1.2.5.jar.
+ * @author 朱志杰 QQ:862990787
+ */
+public class DecryptionUtils {
 
     /**
      * SHA1加密
@@ -65,4 +72,54 @@ public class SHAUtil {
         }
         return "";
     }
+
+	 /** 
+     * base64进制加密
+     * @param password 
+     * @return 
+     */ 
+    public static String encryptBase64(String password) {
+        if(StringUtil.isEmpty(password)){
+            throw new RuntimeException("password 不能为空!");
+        }
+        byte[] bytes = password.getBytes();
+        return Base64.encodeToString(bytes);
+    } 
+    /** 
+     * base64进制解密 
+     * @param cipherText 
+     * @return 
+     */ 
+    public static String decryptBase64(String cipherText) {
+        if(StringUtil.isEmpty(cipherText)){
+            throw new RuntimeException("cipherText 不能为空!");
+        }
+        return Base64.decodeToString(cipherText);
+    }
+
+    /** 
+     * 16进制加密
+     * @param password 
+     * @return 
+     */ 
+    public static String encryptHex(String password) {
+        if(StringUtil.isEmpty(password)){
+            throw new RuntimeException("password 不能为空!");
+        }
+        byte[] bytes = password.getBytes();
+        return Hex.encodeToString(bytes);
+    }
+
+    /** 
+     * 16进制解密 
+     * @param cipherText 
+     * @return 
+     */ 
+    public static String decryptHex(String cipherText) {
+        if(StringUtil.isEmpty(cipherText)){
+            throw new RuntimeException("cipherText 不能为空!");
+        }
+        return new String(Hex.decode(cipherText));
+    }
+
 }

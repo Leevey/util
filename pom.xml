@@ -4,10 +4,10 @@
   <groupId>com.jingsky</groupId>
   <artifactId>com.jingsky.util</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.0-RELEASE</version>
+  <version>1.0.1-RELEASE</version>
   <name>util</name>
   <url>https://github.com/myzhijie/util</url>
-  <description>Java development tools for everyday use</description>
+  <description>Tools for everyday use , including file processing ( including Excel, CSV , etc. ) , string processing , encryption and decryption, graphics , IO processing, network processing etc.</description>
 
   <scm>
     <connection>scm:git:https://github.com/myzhijie/util.git</connection>
@@ -40,11 +40,13 @@
       <groupId>org.apache.poi</groupId>
       <artifactId>poi</artifactId>
       <version>3.9</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.poi</groupId>
       <artifactId>poi-ooxml</artifactId>
       <version>3.9</version>
+      <scope>provided</scope>
     </dependency>
 
     <!--commons -->
@@ -52,21 +54,25 @@
       <groupId>commons-dbcp</groupId>
       <artifactId>commons-dbcp</artifactId>
       <version>1.4</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>commons-dbutils</groupId>
       <artifactId>commons-dbutils</artifactId>
       <version>1.4</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-compress</artifactId>
       <version>1.5</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>commons-net</groupId>
       <artifactId>commons-net</artifactId>
       <version>3.1</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>commons-collections</groupId>
@@ -79,15 +85,23 @@
       <version>3.3.2</version>
     </dependency>
 
+
+    <dependency>
+      <groupId>org.apache.shiro</groupId>
+      <artifactId>shiro-core</artifactId>
+      <version>1.2.5</version>
+    </dependency>
     <dependency>
       <groupId>org.apache.mina</groupId>
       <artifactId>mina-core</artifactId>
       <version>2.0.7</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>ch.ethz.ganymed</groupId>
       <artifactId>ganymed-ssh2</artifactId>
       <version>build210</version>
+      <scope>provided</scope>
     </dependency>
 
     <!--httpclient -->
@@ -95,11 +109,13 @@
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpclient</artifactId>
       <version>4.5.1</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpmime</artifactId>
       <version>4.5.1</version>
+      <scope>provided</scope>
     </dependency>
 
     <!-- for AESUtil -->
@@ -107,17 +123,20 @@
       <groupId>org.bouncycastle</groupId>
       <artifactId>bcprov-jdk15</artifactId>
       <version>1.38</version>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>com.google.zxing</groupId>
       <artifactId>javase</artifactId>
       <version>3.2.0</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.google.zxing</groupId>
       <artifactId>core</artifactId>
       <version>3.2.0</version>
+      <scope>provided</scope>
     </dependency>
 
     <!--for mail util -->
@@ -125,11 +144,13 @@
       <groupId>taglibs</groupId>
       <artifactId>standard</artifactId>
       <version>1.1.2</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.sun.mail</groupId>
       <artifactId>javax.mail</artifactId>
       <version>1.5.4</version>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>

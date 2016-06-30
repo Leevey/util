@@ -1,5 +1,8 @@
 package com.jingsky.util.io;
 
+import com.jingsky.util.lang.ConvertUtils;
+import org.apache.commons.io.IOUtils;
+
 import java.io.*;
 
 /**
@@ -10,6 +13,36 @@ import java.io.*;
 public class FileUtil {
 	private static final String FOLDER_SEPARATOR = "/";
 	private static final char EXTENSION_SEPARATOR = '.';
+
+	/**
+	 * 获取文件头
+	 * @param input
+	 * @return
+	 * @throws IOException
+	 */
+	public static String getHeadHex(InputStream input ,long size) throws IOException{
+		byte[] head = IOUtils.toByteArray(input,size);
+		String headHex = ConvertUtils.byteToHex(head);
+		return headHex;
+	}
+
+	/**
+	 *
+	 * 判断文件是否为指定类型文件
+	 * @param input
+	 * @param tag tag取值参见 FileHeader
+	 * @return
+	 */
+	public static boolean isSpecFile(byte[] input, String tag) {
+		int len = tag.length() / 2;
+		if (input.length < len) {
+			return false;
+		}
+		byte[] head = new byte[len];
+		System.arraycopy(input, 0, head, 0, len);
+		String headHex = ConvertUtils.byteToHex(head);
+		return headHex.equals(tag);
+	}
 	
 	/**
 	 * 功能：复制文件或者文件夹。

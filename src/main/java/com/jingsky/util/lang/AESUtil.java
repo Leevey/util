@@ -1,5 +1,7 @@
 package com.jingsky.util.lang;
 
+import org.apache.shiro.codec.Base64;
+
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
@@ -44,7 +46,7 @@ public class AESUtil {
      */
 	public static String decode(String stringToEncode,String password) throws Exception {
 		SecretKeySpec skeySpec = getKey(password);
-		byte[] clearText = Base64.decode(stringToEncode).getBytes();
+		byte[] clearText = Base64.decode(stringToEncode);
 		final byte[] iv = new byte[16];
 		Arrays.fill(iv, (byte) 0x00);
 		IvParameterSpec ivParameterSpec = new IvParameterSpec(iv);

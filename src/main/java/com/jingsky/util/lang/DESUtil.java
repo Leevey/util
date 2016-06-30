@@ -2,6 +2,7 @@ package com.jingsky.util.lang;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.shiro.codec.Base64;
 
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
@@ -63,8 +64,8 @@ public class DESUtil {
         try {
             String salt = encryptTxt.substring(0, saltLength);
             String ciphertext = encryptTxt.substring(saltLength, encryptTxt.length());
-            byte[] saltarray = Base64.decode(salt).getBytes();
-            byte[] ciphertextArray = Base64.decode(ciphertext).getBytes();
+            byte[] saltarray = Base64.decode(salt);
+            byte[] ciphertextArray = Base64.decode(ciphertext);
             PBEKeySpec keySpec = new PBEKeySpec(key.toCharArray());
             SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("PBEWithMD5AndDES");
             SecretKey skey = keyFactory.generateSecret(keySpec);

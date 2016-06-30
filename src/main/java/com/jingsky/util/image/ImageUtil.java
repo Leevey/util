@@ -4,11 +4,14 @@ import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
 import javax.imageio.ImageIO;
+import javax.imageio.ImageReader;
+import javax.imageio.stream.ImageInputStream;
 import java.awt.*;
 import java.awt.color.ColorSpace;
 import java.awt.geom.AffineTransform;
 import java.awt.image.*;
 import java.io.*;
+import java.util.Iterator;
 
 /**
  * 图片处理工具类：<br>
@@ -25,6 +28,28 @@ public class ImageUtil {
     public static String IMAGE_TYPE_BMP = "bmp";// 英文Bitmap（位图）的简写，它是Windows操作系统中的标准图像文件格式
     public static String IMAGE_TYPE_PNG = "png";// 可移植网络图形
     public static String IMAGE_TYPE_PSD = "psd";// Photoshop的专用格式Photoshop
+
+    /**
+     * 根据图片的二进制流获取文件类型
+     * @param data
+     * @return
+     * @throws IOException
+     */
+    public static String getImageTypeFromByteArray(byte[] data)
+            throws IOException {
+        InputStream is = new ByteArrayInputStream(data);
+        ImageInputStream iis = ImageIO.createImageInputStream(is);
+        Iterator<ImageReader> iter = ImageIO.getImageReaders(iis);
+        if (!iter.hasNext()) {
+            return null;
+        }
+
+        ImageReader reader = iter.next();
+        iis.close();
+        String fileName = reader.getFormatName();
+
+        return fileName;
+    }
     
     /**
      * 功能：将图片文件转化为字节数组字符串，并对其进行Base64编码处理。

@@ -17,6 +17,61 @@ public class StringUtil {
      * <p>The maximum size to which the padding constant(s) can expand.</p>
      */
     private static final int PAD_LIMIT = 8192;
+
+    /**
+     *
+     * 根据map key ,value 替换字符串 默认不忽略大小写
+     * @param template
+     * @param tokens
+     * @return
+     */
+    public static String  replace(String template,Map<String,String> tokens){
+        return replace(template,tokens,false,true);
+    }
+    /**
+     *
+     * 根据map key ,value 替换字符串
+     * @param template
+     * @param tokens
+     * @param isIgnoreCase 匹配key 是否忽略大小写
+     * @return
+     */
+    public static String  replace(String template,Map<String,String> tokens,boolean isIgnoreCase,boolean isIgnoreSpace){
+
+        if(isEmpty(template)){
+            return null;
+        }
+        if(tokens==null||tokens.isEmpty()){
+            return template;
+        }
+        StringBuffer sb = new StringBuffer();
+        String separator="\\s|\\s";
+        if(isIgnoreSpace){
+            separator="|";
+        }
+        String wordReg = join(tokens.keySet(), separator);//用(?i)来忽略大小写
+        if(isIgnoreCase){
+            wordReg="(?i)"+wordReg;
+        }
+        if(!isIgnoreSpace){
+            wordReg+="\\s";
+        }
+
+        Pattern pattern = Pattern.compile(wordReg);
+        Matcher matcher = pattern.matcher(template);
+        while(matcher.find()) {
+            String key=matcher.group().trim();
+            if(isIgnoreSpace){
+                key=key.trim();
+            }
+            if(isIgnoreCase){
+                key=key.toLowerCase();
+            }
+            matcher.appendReplacement(sb, tokens.get(key));
+        }
+        matcher.appendTail(sb);
+        return sb.toString();
+    }
     
     /**
      * 将中间带下划线的字符串转换为像java驼峰式字符串。
@@ -59,59 +114,6 @@ public class StringUtil {
     	}  
     	return sb.toString();
     }
-	
-	/**
-     * 功能：将全角的符号转换成半角符号.(即中文字符转英文字符)
-     * @author 朱志杰 QQ：862990787
-     * 2013-12-12 下午10:14:40
-     * @param str 源字符串
-     * @return String
-     */
-	public static String changeToHalf(String str) {
-		String[] decode = {"1","2","3","4","5","6","7","8","9","0","!","@","#","$","%","^","&","*","(",")","a","b","c","d","e","f","g","h","i","j","k","l"
-				,"m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U"
-				,"V","W","X","Y","Z","-","_","=","+","\\","|","[","]",";",":","'","\"",",","<",".",">","/","?"};
-		String source= "１２３４５６７８９０！＠＃＄％︿＆＊（）ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ－＿＝＋＼｜【】；：'\\，〈。〉／？";
-		String result = "";
-		for (int i = 0; i < str.length(); i++) {
-			int pos = source.indexOf(str.charAt(i));
-			if (pos != -1) {
-				result += decode[pos];
-			} else {
-				result += str.charAt(i);
-			}
-		}
-		return result;
-	}
-    
-    /**
-     * 功能：将半角的符号转换成全角符号.(即英文字符转中文字符)
-     * @author 朱志杰 QQ：862990787
-     * 2013-12-12 下午10:14:40
-     * @param str 源字符串
-     * @return String
-     */
-	public static String changeToFull(String str) {
-		String source = "1234567890!@#$%^&*()abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_=+\\|[];:'\",<.>/?";
-		String[] decode = { "１", "２", "３", "４", "５", "６", "７", "８", "９", "０",
-				"！", "＠", "＃", "＄", "％", "︿", "＆", "＊", "（", "）", "ａ", "ｂ",
-				"ｃ", "ｄ", "ｅ", "ｆ", "ｇ", "ｈ", "ｉ", "ｊ", "ｋ", "ｌ", "ｍ", "ｎ",
-				"ｏ", "ｐ", "ｑ", "ｒ", "ｓ", "ｔ", "ｕ", "ｖ", "ｗ", "ｘ", "ｙ", "ｚ",
-				"Ａ", "Ｂ", "Ｃ", "Ｄ", "Ｅ", "Ｆ", "Ｇ", "Ｈ", "Ｉ", "Ｊ", "Ｋ", "Ｌ",
-				"Ｍ", "Ｎ", "Ｏ", "Ｐ", "Ｑ", "Ｒ", "Ｓ", "Ｔ", "Ｕ", "Ｖ", "Ｗ", "Ｘ",
-				"Ｙ", "Ｚ", "－", "＿", "＝", "＋", "＼", "｜", "【", "】", "；", "：",
-				"'", "\"", "，", "〈", "。", "〉", "／", "？" };
-		String result = "";
-		for (int i = 0; i < str.length(); i++) {
-			int pos = source.indexOf(str.charAt(i));
-			if (pos != -1) {
-				result += decode[pos];
-			} else {
-				result += str.charAt(i);
-			}
-		}
-		return result;
-	}
     
     /**
      * 功能：cs串中是否一个都不包含字符数组searchChars中的字符。
@@ -149,29 +151,6 @@ public class StringUtil {
             }
         }
         return true;
-    }
-    
-    //--------------------------------------------------------------------------
-    /**
-     * <p>编码为Unicode，格式 '\u0020'.</p>
-     * 
-     * <pre>
-     *   CharUtils.unicodeEscaped(' ') = "\u0020"
-     *   CharUtils.unicodeEscaped('A') = "\u0041"
-     * </pre>
-     * 
-     * @param ch  源字符串
-     * @return 转码后的字符串
-     */
-    public static String unicodeEscaped(char ch) {
-        if (ch < 0x10) {
-            return "\\u000" + Integer.toHexString(ch);
-        } else if (ch < 0x100) {
-            return "\\u00" + Integer.toHexString(ch);
-        } else if (ch < 0x1000) {
-            return "\\u0" + Integer.toHexString(ch);
-        }
-        return "\\u" + Integer.toHexString(ch);
     }
     
     /**
