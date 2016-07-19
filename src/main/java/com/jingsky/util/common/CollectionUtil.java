@@ -83,8 +83,11 @@ public class CollectionUtil {
 	 * @param array 数组
 	 */
 	public static <T> void addArrayToList(List<T> list, T[] array) {
-		if (isEmpty(list)) {
+		if (isEmpty(array)) {
 			return;
+		}
+		if(list==null){
+			list=new ArrayList<T>();
 		}
 		for (T t : array) {
 			list.add(t);
