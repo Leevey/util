@@ -4,7 +4,7 @@
   <groupId>com.jingsky</groupId>
   <artifactId>com.jingsky.util</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.2-RELEASE</version>
+  <version>1.0.3-RELEASE</version>
   <name>util</name>
   <url>https://github.com/myzhijie/util</url>
   <description>Tools for everyday use , including file processing ( including Excel, CSV , etc. ) , string processing , encryption and decryption, graphics , IO processing, network processing etc.</description>
