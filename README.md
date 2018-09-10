@@ -34,3 +34,9 @@ Timespan 时间间隙类，辅助于时间工具类，计算两个时间差很�
 VerifyUtil 日常校验工具类，邮箱地址、网址、字母数字等，一定可以用的上。<br/>
 XMLUtil xml操作工具类，读取、修改、删除、插入等。<br/>
 ZipUtil 压缩、解压缩zip文件，可以指定解压哪个，也可以压缩文件夹。有这个自己写个压缩软件没问题。<br/>
+
+包：API
+1.PageInfo 用于API分页 
+2.Response 用于API日常返回
+
+#####请老沙喝茶，支付宝：myzhijie@qq.com
