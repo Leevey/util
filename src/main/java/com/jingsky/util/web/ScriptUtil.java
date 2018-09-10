@@ -4,7 +4,7 @@ import java.io.IOException;
 
 /**
  * 脚本助手，主要用来在后台输出js的confirm以及alert等。
- * 例如：response.getWrite().print(ScriptUtil.Reload());//刷新当前页面。（重新加载）
+ * 例如：api.getWrite().print(ScriptUtil.Reload());//刷新当前页面。（重新加载）
  * @author 朱志杰 QQ：695520848
  * Jul 31, 2013 9:35:25 AM
  */

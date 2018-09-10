@@ -1,7 +1,6 @@
 package com.jingsky.util.web;
 
 import com.jingsky.util.lang.StringUtil;
-import com.jingsky.util.os.MacUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +17,7 @@ import java.util.StringTokenizer;
  * @author 朱志杰 QQ：695520848
  */
 public class WebUtil {
-    private static final org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(MacUtils.class);
+    private static final org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(WebUtil.class);
 
     /**
      * 获取当前请求的全路径，包含参数信息。

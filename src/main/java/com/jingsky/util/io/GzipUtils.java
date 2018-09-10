@@ -1,7 +1,5 @@
 package com.jingsky.util.io;
 
-import com.jingsky.util.os.MacUtils;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

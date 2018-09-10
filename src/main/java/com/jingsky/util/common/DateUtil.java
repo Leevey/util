@@ -4,8 +4,7 @@ import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
+import java.util.*;
 
 /**
  * DATE 继承于 java.common.Date，多实现了很多方法。
@@ -631,5 +630,268 @@ public class DateUtil {
 	public DateUtil() {
 		this.date=new Date();
 	}
-	
+
+	//------------------------暂未详细整理 start-------------------------------
+	public static long DAY = 86400000l;
+	public static int DAY_SECOND = 86400;
+	public static int DAYS_30 = 2592000;
+	public static int ONE_HOUR = 3600;
+	public static Map<String, Integer> months = new HashMap<String, Integer>() {{
+		put("JANUARY", 1);
+		put("JAN", 1);
+		put("FEBRUARY", 2);
+		put("FEB", 2);
+		put("MARCH", 3);
+		put("MAR", 3);
+		put("APRIL", 4);
+		put("APR", 4);
+		put("MAY", 5);
+		put("MAY", 5);
+		put("JUNE", 6);
+		put("JUN", 6);
+		put("JULY", 7);
+		put("JUL", 7);
+		put("AUGUST", 8);
+		put("AUG", 8);
+		put("SEPTEMBER", 9);
+		put("SEP", 9);
+		put("SEPT", 9);
+		put("OCTOBER", 10);
+		put("OCT", 10);
+		put("NOVEMBER", 11);
+		put("NOV", 11);
+		put("DECEMBER", 12);
+		put("DEC", 12);
+	}};
+
+	public static SimpleDateFormat getIso8601DateFormat() {
+		final SimpleDateFormat ISO8601UTC = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");// 24
+		ISO8601UTC.setTimeZone(TimeZone.getTimeZone("UTC")); // UTC == GMT
+		return ISO8601UTC;
+	}
+
+	public static SimpleDateFormat getYmdUtcDateFormat() {
+		final SimpleDateFormat ISO8601UTC = new SimpleDateFormat("yyyy-MM-dd");// 24
+		ISO8601UTC.setTimeZone(TimeZone.getTimeZone("UTC")); // UTC == GMT
+		return ISO8601UTC;
+	}
+
+	public static DateFormat getDateFormat(String format) {
+		return new SimpleDateFormat(format);
+	}
+
+	public static Calendar getCurrentUtcTime() {
+		return Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+	}
+
+	public static Long parse(String s) {
+		if (s == null)
+			return null;
+		s = s.toUpperCase().trim();
+		if (s.length() == 0)
+			return null;
+		s.replaceAll("[-/ \\.]+", " ");
+		String[] item = s.split(" ");
+
+		Integer year = null;
+		try {
+			year = Integer.parseInt(item[0]);
+		} catch (Exception e) {
+		}
+
+		Integer month = null;
+		Integer day = null;
+		if (year != null) {
+			try {
+				month = Integer.parseInt(item[1]);
+			} catch (Exception e) {
+				month = months.get(item[1]);
+			}
+			if (month == null)
+				throw new RuntimeException("unknow date format");
+		}
+
+		return null;
+	}
+
+	public static long firstDayOfNextMonth() {
+		Calendar aCalendar = getCurrentUtcTime();
+		aCalendar.add(Calendar.MONTH, 1);
+		aCalendar.set(Calendar.DATE, 1);
+		aCalendar.set(Calendar.HOUR_OF_DAY, 0);
+		aCalendar.set(Calendar.MINUTE, 0);
+		aCalendar.set(Calendar.SECOND, 0);
+		aCalendar.set(Calendar.MILLISECOND, 0);
+		return aCalendar.getTime().getTime();
+	}
+
+	public static long firstDayOfNextMonth(long date) {
+		Calendar aCalendar = getCurrentUtcTime();
+		aCalendar.setTimeInMillis(date);
+		aCalendar.add(Calendar.MONTH, 1);
+		aCalendar.set(Calendar.DATE, 1);
+		aCalendar.set(Calendar.HOUR_OF_DAY, 0);
+		aCalendar.set(Calendar.MINUTE, 0);
+		aCalendar.set(Calendar.SECOND, 0);
+		aCalendar.set(Calendar.MILLISECOND, 0);
+		return aCalendar.getTime().getTime();
+	}
+
+	public static long firstDayOfNextYear() {
+		Calendar aCalendar = getCurrentUtcTime();
+		aCalendar.add(Calendar.YEAR, 1);
+		aCalendar.set(Calendar.MONTH, 0);
+		aCalendar.set(Calendar.DATE, 1);
+		aCalendar.set(Calendar.HOUR_OF_DAY, 0);
+		aCalendar.set(Calendar.MINUTE, 0);
+		aCalendar.set(Calendar.SECOND, 0);
+		aCalendar.set(Calendar.MILLISECOND, 0);
+		return aCalendar.getTime().getTime();
+	}
+
+	public static long firstDayOfLastYear() {
+		Calendar aCalendar = getCurrentUtcTime();
+		aCalendar.add(Calendar.YEAR, -1);
+		aCalendar.set(Calendar.MONTH, 0);
+		aCalendar.set(Calendar.DATE, 1);
+		aCalendar.set(Calendar.HOUR_OF_DAY, 0);
+		aCalendar.set(Calendar.MINUTE, 0);
+		aCalendar.set(Calendar.SECOND, 0);
+		aCalendar.set(Calendar.MILLISECOND, 0);
+		return aCalendar.getTime().getTime();
+	}
+
+	public static long firstDayOfCurrentMonth() {
+		Calendar aCalendar = getCurrentUtcTime();
+		aCalendar.set(Calendar.DATE, 1);
+		aCalendar.set(Calendar.HOUR_OF_DAY, 0);
+		aCalendar.set(Calendar.MINUTE, 0);
+		aCalendar.set(Calendar.SECOND, 0);
+		aCalendar.set(Calendar.MILLISECOND, 0);
+		return aCalendar.getTime().getTime();
+	}
+
+	public static long firstDayOfCurrentYear() {
+		Calendar aCalendar = getCurrentUtcTime();
+		aCalendar.set(Calendar.MONTH, 0);
+		aCalendar.set(Calendar.DATE, 1);
+		aCalendar.set(Calendar.HOUR_OF_DAY, 0);
+		aCalendar.set(Calendar.MINUTE, 0);
+		aCalendar.set(Calendar.SECOND, 0);
+		aCalendar.set(Calendar.MILLISECOND, 0);
+		return aCalendar.getTime().getTime();
+	}
+
+	public static long firstDayOfLastMonth() {
+		Calendar aCalendar = getCurrentUtcTime();
+		aCalendar.add(Calendar.MONTH, -1);
+		aCalendar.set(Calendar.DATE, 1);
+		aCalendar.set(Calendar.HOUR_OF_DAY, 0);
+		aCalendar.set(Calendar.MINUTE, 0);
+		aCalendar.set(Calendar.SECOND, 0);
+		aCalendar.set(Calendar.MILLISECOND, 0);
+		return aCalendar.getTime().getTime();
+	}
+
+	public static long firstDayOfMonth(long date) {
+		Calendar aCalendar = getCurrentUtcTime();
+		aCalendar.setTimeInMillis(date);
+		aCalendar.set(Calendar.DATE, 1);
+		aCalendar.set(Calendar.HOUR_OF_DAY, 0);
+		aCalendar.set(Calendar.MINUTE, 0);
+		aCalendar.set(Calendar.SECOND, 0);
+		aCalendar.set(Calendar.MILLISECOND, 0);
+		return aCalendar.getTime().getTime();
+	}
+
+	public static long firstDayOfYear(long date) {
+		Calendar aCalendar = getCurrentUtcTime();
+		aCalendar.setTimeInMillis(date);
+		aCalendar.set(Calendar.MONTH, 0);
+		aCalendar.set(Calendar.DATE, 1);
+		aCalendar.set(Calendar.HOUR_OF_DAY, 0);
+		aCalendar.set(Calendar.MINUTE, 0);
+		aCalendar.set(Calendar.SECOND, 0);
+		aCalendar.set(Calendar.MILLISECOND, 0);
+		return aCalendar.getTime().getTime();
+	}
+
+	public static void main(String[] args) {
+		Date date = new Date(1425196800000l);
+		System.out.println(date);
+	}
+
+	public static String gmt8format(Date date, String pattern) {
+		if (date == null || pattern == null) {
+			return "";
+		}
+
+		SimpleDateFormat simpleDateFordmat = new SimpleDateFormat(pattern);
+		simpleDateFordmat.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+		return simpleDateFordmat.format(date);
+	}
+
+	/**
+	 * 字符转日期
+	 *
+	 * @param source  日期字符串
+	 * @param pattern 格式化类型
+	 * @return 日期 date
+	 */
+	public static Date gmt8parse(String source, String pattern) {
+		if (source == null || pattern == null) {
+			return null;
+		}
+
+		try {
+			SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+			simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+			return simpleDateFormat.parse(source);
+		} catch (ParseException e) {
+			return null;
+		}
+	}
+
+	public static Date getWeekStartDate(Date date) {
+		Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
+		cal.setTime(date);
+		cal.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
+		cal.set(Calendar.HOUR_OF_DAY, 0);
+		cal.set(Calendar.MINUTE, 0);
+		cal.set(Calendar.SECOND, 0);
+		cal.set(Calendar.MILLISECOND, 0);
+		return cal.getTime();
+	}
+
+	public static Date getMonthStartDate(Date date) {
+		Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
+		cal.setTime(date);
+		cal.set(Calendar.DAY_OF_MONTH, 1);
+		cal.set(Calendar.HOUR_OF_DAY, 0);
+		cal.set(Calendar.MINUTE, 0);
+		cal.set(Calendar.SECOND, 0);
+		cal.set(Calendar.MILLISECOND, 0);
+		return cal.getTime();
+	}
+
+	public static Date getGMT8TodayStart(Date date){
+		Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
+		calendar.setTime(date);
+		calendar.set(Calendar.HOUR_OF_DAY, 0);
+		calendar.set(Calendar.MINUTE, 0);
+		calendar.set(Calendar.SECOND, 0);
+		calendar.set(Calendar.MILLISECOND, 0);
+		return calendar.getTime();
+	}
+
+	public static Date getGMT8TodayEnd(Date date){
+		Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
+		calendar.setTime(date);
+		calendar.set(Calendar.HOUR_OF_DAY, 23);
+		calendar.set(Calendar.MINUTE, 59);
+		calendar.set(Calendar.SECOND, 59);
+		calendar.set(Calendar.MILLISECOND, 0);
+		return calendar.getTime();
+	}
+	//------------------------暂未详细整理 end-------------------------------
 }

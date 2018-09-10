@@ -51,14 +51,4 @@ public class MyTest {
 
 
     }
-
-    @Test
-    public  void b(){
-        MacUtilsTest macUtilsTest1=new MacUtilsTest();
-        MacUtilsTest macUtilsTest2=new MacUtilsTest();
-        macUtilsTest1.a="1";
-        macUtilsTest2.a="1";
-        System.out.println(macUtilsTest1.equals(macUtilsTest2));
-        System.out.println(macUtilsTest1==macUtilsTest2);
-    }
 }
