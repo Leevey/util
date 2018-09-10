@@ -4,21 +4,21 @@
   <groupId>com.jingsky</groupId>
   <artifactId>com.jingsky.util</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.5-RELEASE</version>
+  <version>1.1.1-RELEASE</version>
   <name>util</name>
   <url>https://github.com/myzhijie/util</url>
-  <description>Tools for everyday use , including file processing ( including Excel, CSV , etc. ) , string processing , encryption and decryption, graphics , IO processing, network processing etc.</description>
+  <description>你日常使用的一些工具类，欢迎给建议，QQ:862990787。</description>
 
   <scm>
     <connection>scm:git:https://github.com/myzhijie/util.git</connection>
     <developerConnection>scm:git:https://github.com/myzhijie/util.git</developerConnection>
     <url>https://github.com/myzhijie/util</url>
-    <tag>v1.0.3</tag>
+    <tag>v1.1.1</tag>
   </scm>
   <developers>
     <developer>
-      <name>zhijie.zhu</name>
-      <email>myzhijie@gmail.com</email>
+      <name>mark.zhu</name>
+      <email>862990787@qq.com</email>
       <organization>none</organization>
       <organizationUrl>https://github.com/myzhijie</organizationUrl>
     </developer>
@@ -279,7 +279,7 @@
               <encoding>UTF-8</encoding>
               <charset>UTF-8</charset>
               <!--ignore java document check-->
-              <additionalparam>-Xdoclint:none</additionalparam>
+              <additionalOptions>-Xdoclint:none</additionalOptions>
             </configuration>
 
             <executions>
